@@ -17,14 +17,17 @@ BarraProgreso::BarraProgreso()
         if(!working_)
             prog_.value(0);
     }));
-
     btn_start_.enabled(true);
+
     btn_cancel_.create(*this, nana::rectangle(120, 10, 100, 20));
     btn_cancel_.caption("Cancel");
 
     //si reseteas aqui prog_, al estar siendo modificada por dos hilos,
     //los dos hilos escribirán al mismo tiempo, por lo que habrá problemas. Mejor hacerlo en ambos
     btn_cancel_.events().click( [&](){working_ = false; prog_.value(0);});
+    elem.create(*this, nana::rectangle(10, 100, 100, 30));
+    elem.caption("wooooot");
+
     prog_.create(*this, nana::rectangle(10, 40, 280, 20));
 }
 
