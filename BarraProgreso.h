@@ -9,6 +9,7 @@
 #include <nana/system/dataexch.hpp>
 #include <nana/system/shared_wrapper.hpp>
 #include <nana/threads/pool.hpp>
+#include "Dibujar.h"
 
 class BarraProgreso : public nana::form
 {
@@ -22,6 +23,7 @@ private:
             nana::button    btn_cancel_ ;
             nana::progress prog_ ;
             nana::threads::pool pool_;
+            elemento elem;
 };
 
 #endif // BARRAPROGRESO_H
